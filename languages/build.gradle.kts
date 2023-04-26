@@ -1,15 +1,15 @@
-import geo.countries.GenerateCountriesTask
+import geo.languages.GenerateLanguagesTask
 
 plugins {
     kotlin("multiplatform")
     kotlin("plugin.serialization")
     id("tz.co.asoft.library")
-    id("countries-generator")
+    id("languages-generator")
 }
 
-description = "A kotlin multiplatform library for offline country support"
+description = "A kotlin multiplatform library that maps languages to countries"
 
-val generateCountries by tasks.getting(GenerateCountriesTask::class)
+val generateLanguages by tasks.getting(GenerateLanguagesTask::class)
 
 kotlin {
     jvm { library() }
@@ -22,15 +22,13 @@ kotlin {
 
     targets.configureEach {
         compilations.all {
-            compileKotlinTask.dependsOn(generateCountries)
+            compileKotlinTask.dependsOn(generateLanguages)
         }
     }
 
     sourceSets {
         val commonMain by getting {
-            kotlin.srcDir(generateCountries.outputDir)
             dependencies {
-                api(projects.kashCurrency)
                 api(kotlinx.serialization.core)
             }
         }

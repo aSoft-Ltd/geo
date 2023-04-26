@@ -34,7 +34,11 @@ rootProject.name = "geo"
 
 includeBuild("../able")
 
-includeBuild("./countries-generator")
+includeBuild("../kash/currency-generator")
+includeBuild("./geo-generator")
+includeSubs("kommander", "../kommander", "core")
+includeSubs("liquid", "../liquid", "number")
+includeSubs("kash", "../kash", "currency")
 
 // dependencies
-includeSubs("kommander", "../kommander", "core")
+includeSubs("geo", ".", "countries")
