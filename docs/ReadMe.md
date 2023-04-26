@@ -1,6 +1,6 @@
-# Krono
+# Geo
 
-A Multiplatform logging library
+A Multiplatform library for working with geographical models
 
 [badges]
 
@@ -9,12 +9,12 @@ A Multiplatform logging library
 ```kotlin
 dependencies {
     // if you need it in common code
-    implementation("tz.co.asoft:krono-api:[version]")
+    implementation("tz.co.asoft:geo-countries:[version]")
 }
 ```
 
 ## Api Reference
-The full api reference of kevlar can be found at [https://asoft-ltd.github.io/krono](https://asoft-ltd.github.io/krono)
+The full api reference of kevlar can be found at [https://asoft-ltd.github.io/geo](https://asoft-ltd.github.io/geo)
 
 ## Support
 

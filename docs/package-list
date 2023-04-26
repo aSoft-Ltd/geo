@@ -1,0 +1,15 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+
+module:kash-currency
+kash
+module:kommander-core
+expect
+expect.internal
+kommander
+kommander.internal
+module:liquid-number
+formatter
+formatter.internal
+liquid
+liquid.internal
