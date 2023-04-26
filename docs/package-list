@@ -1,8 +1,15 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
 
+module:geo-core
+geo
+geo.serializers
 module:kash-currency
 kash
+module:kollections-interoperable
+kollections
+kollections.internal
+kollections.serializers
 module:kommander-core
 expect
 expect.internal

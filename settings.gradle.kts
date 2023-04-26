@@ -37,8 +37,9 @@ includeBuild("../able")
 includeBuild("../kash/currency-generator")
 includeBuild("./geo-generator")
 includeSubs("kommander", "../kommander", "core")
+includeSubs("kollections", "../kollections", "interoperable")
 includeSubs("liquid", "../liquid", "number")
 includeSubs("kash", "../kash", "currency")
 
 // dependencies
-includeSubs("geo", ".", "countries")
+includeSubs("geo", ".", "core", "countries")
