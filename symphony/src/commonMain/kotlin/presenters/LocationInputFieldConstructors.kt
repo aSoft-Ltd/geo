@@ -1,0 +1,42 @@
+@file:Suppress("NOTHING_TO_INLINE")
+
+package presenters
+
+import geo.GeoLocation
+import presenters.internal.LocationInputFieldImpl
+import kotlin.reflect.KProperty
+
+@Deprecated("use geo instead")
+inline fun LocationInputField(
+    name: String,
+    isRequired: Boolean = false,
+    label: String = name,
+    hint: String = label,
+    value: GeoLocation? = null,
+    isReadonly: Boolean = false,
+    noinline validator: ((GeoLocation?) -> Unit)? = null
+): LocationInputField = LocationInputFieldImpl(name, isRequired, Label(label, isRequired), hint, value, isReadonly, validator)
+
+@Deprecated("use geo instead")
+inline fun Fields.location(
+    name: String,
+    isRequired: Boolean = false,
+    label: String = name,
+    hint: String = label,
+    value: GeoLocation? = null,
+    isReadonly: Boolean = false,
+    noinline validator: ((GeoLocation?) -> Unit)? = null
+) = getOrCreate(name) {
+    LocationInputField(name, isRequired, label, hint, value, isReadonly, validator)
+}
+
+@Deprecated("use geo instead")
+inline fun Fields.location(
+    name: KProperty<GeoLocation?>,
+    isRequired: Boolean = false,
+    label: String = name.name,
+    hint: String = label,
+    value: GeoLocation? = null,
+    isReadonly: Boolean = false,
+    noinline validator: ((GeoLocation?) -> Unit)? = null
+) = location(name.name, isRequired, label, hint, value, isReadonly, validator)
